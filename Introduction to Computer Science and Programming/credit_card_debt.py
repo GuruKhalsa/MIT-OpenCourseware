@@ -3,13 +3,18 @@ annual_interest_rate = float(raw_input('What is the annual interest rate of the 
 minimum_payment_rate = float(raw_input('What is the minimum monthly payment rate of the credit card?\n'))
 
 monthly_interest_rate = annual_interest_rate/12
-
+total_paid = 0
 for i in range(1,13):
 	monthly_payment = minimum_payment_rate * balance
 	interest_paid = monthly_interest_rate * balance
 	principle_paid = monthly_payment - interest_paid
 	balance = balance - principle_paid
+	total_paid += monthly_payment
 	print '\nYear ' + str(i)
 	print 'Monthly Payment= $' + str(round(monthly_payment, 2))
 	print 'Principle Paid= $' + str(round(principle_paid, 2))
 	print 'Remaing Balance= $' + str(round(balance, 2))
+
+print '\nRESULT'
+print 'Total Paid= $' + str(round(total_paid, 2))
+print "Final Balance= $" + str(round(balance, 2))
