@@ -57,7 +57,6 @@ def compute_root(poly, x, epsilon, iterations = 1):
     else:
         x = x - (evaluate_poly(poly, x)/evaluate_poly(compute_deriv(poly), x))
         compute_root(poly, x, epsilon, iterations + 1)
-    # print x, iterations, "I'm done"
 
 poly = (-13.39, 0.0, 17.5, 3.0, 1.0)
 x = .1
